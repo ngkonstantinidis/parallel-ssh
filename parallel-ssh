@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#
+# usage ./parallel-ssh
+#
+
+# List of servers (you can use IPs or hostnames)
+servers=(
+  server1.example.com
+  server2.example.com
+  server3.example.com
+)
+
+# The SSH command you want to run
+ssh_command="uptime"  # Replace with your command
+
+# SSH username
+user="your-username"  # Replace with your actual SSH username
+
+# Loop through each server and run the command
+for server in "${servers[@]}"; do
+  echo "Running command on $server..."
+  ssh "$user@$server" "$ssh_command"
+  echo "-----"
+done
