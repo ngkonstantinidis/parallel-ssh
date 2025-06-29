@@ -19,7 +19,7 @@ user="your-username"  # Replace with your actual SSH username
 
 # Loop through each server and run the command
 for server in "${servers[@]}"; do
-  echo "Running command on $server..."
+  echo "Running command on $server with $user..."
   ssh "$user@$server" "$ssh_command"
   echo "-----"
 done
